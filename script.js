@@ -43,8 +43,10 @@ let currentMessage = "";
 function formatNumber(number) {
 
     return String(number)
-        .padStart(2, "0");
-
+        .padStart(
+            2,
+            "0"
+        );
 }
 
 
@@ -73,8 +75,7 @@ function changeMessage(newMessage) {
         messageElement.style.opacity =
             "1";
 
-    }, 200);
-
+    }, 180);
 }
 
 
@@ -87,6 +88,8 @@ function updateCountdown() {
     const distance =
         weddingDate - now;
 
+
+    /* وصل الموعد */
 
     if (distance <= 0) {
 
@@ -118,13 +121,21 @@ function updateCountdown() {
 
 
     const dayMS =
-        1000 * 60 * 60 * 24;
+        1000 *
+        60 *
+        60 *
+        24;
+
 
     const hourMS =
-        1000 * 60 * 60;
+        1000 *
+        60 *
+        60;
+
 
     const minuteMS =
-        1000 * 60;
+        1000 *
+        60;
 
 
     const days =
@@ -176,6 +187,8 @@ function updateCountdown() {
     secondsElement.textContent =
         formatNumber(seconds);
 
+
+    /* الرسائل */
 
     let message;
 
@@ -233,6 +246,8 @@ function updateCountdown() {
     changeMessage(message);
 
 
+    /* آخر عشر ثواني */
+
     const totalSeconds =
         Math.ceil(
             distance /
@@ -260,9 +275,7 @@ function updateCountdown() {
         lastSecondsScreen
             .classList
             .remove("active");
-
     }
-
 }
 
 
