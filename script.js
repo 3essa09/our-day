@@ -43,10 +43,7 @@ let currentMessage = "";
 function formatNumber(number) {
 
     return String(number)
-        .padStart(
-            2,
-            "0"
-        );
+        .padStart(2, "0");
 
 }
 
