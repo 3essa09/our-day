@@ -1,15 +1,229 @@
-<div class="couple">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-    <img
-        src="images/groom.png"
-        class="groom"
-        alt=""
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <img
-        src="images/bride.png"
-        class="bride"
-        alt=""
+    <meta
+        name="theme-color"
+        content="#efe7dc"
     >
+
+    <title>Our Day 🤍</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<div class="screen">
+
+    <main class="stage">
+
+        <!-- Background -->
+        <div class="background"></div>
+
+
+        <!-- Arch -->
+        <img
+            src="images/arch.png"
+            class="arch"
+            alt=""
+        >
+
+
+        <!-- Side Flowers -->
+        <img
+            src="images/flowers-left.png"
+            class="side-flower flowers-left"
+            alt=""
+        >
+
+        <img
+            src="images/flowers-right.png"
+            class="side-flower flowers-right"
+            alt=""
+        >
+
+
+        <!-- Names -->
+        <div class="names-area">
+
+            <img
+                src="images/is.svg"
+                class="names-logo"
+                alt="عيسى وسارة"
+            >
+
+            <img
+                src="images/leaves-divider.png"
+                class="divider"
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- Countdown -->
+        <div class="countdown-area">
+
+            <div class="countdown">
+
+                <div class="count-box">
+                    <span id="days">00</span>
+                    <small>يوم</small>
+                </div>
+
+                <div class="count-box">
+                    <span id="hours">00</span>
+                    <small>ساعة</small>
+                </div>
+
+                <div class="count-box">
+                    <span id="minutes">00</span>
+                    <small>دقيقة</small>
+                </div>
+
+                <div class="count-box">
+                    <span id="seconds">00</span>
+                    <small>ثانية</small>
+                </div>
+
+            </div>
+
+
+            <p
+                id="countdown-message"
+                class="message"
+            >
+                يومنا صار أقرب 🤍
+            </p>
+
+        </div>
+
+
+        <!-- Couple -->
+        <div class="couple-area">
+
+            <img
+                src="images/couple.png"
+                class="couple-image"
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- Date Card -->
+        <div class="date-card">
+
+            <div class="day-name">
+                الأربعاء
+            </div>
+
+            <div class="full-date">
+                09 · 09 · 2026
+            </div>
+
+            <div class="date-divider">
+
+                <span></span>
+
+                <b>♡</b>
+
+                <span></span>
+
+            </div>
+
+            <div class="time">
+                6:30 PM
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Flowers -->
+        <img
+            src="images/flowers-bottom-left.png"
+            class="bottom-flower bottom-left"
+            alt=""
+        >
+
+        <img
+            src="images/flowers-bottom-right.png"
+            class="bottom-flower bottom-right"
+            alt=""
+        >
+
+    </main>
 
 </div>
+
+
+<!-- Last 10 Seconds -->
+<div
+    id="last-seconds-screen"
+    class="last-seconds-screen"
+>
+
+    <p>
+        باقي على يومنا
+    </p>
+
+    <span id="last-number">
+        10
+    </span>
+
+</div>
+
+
+<!-- Final Screen -->
+<div
+    id="final-screen"
+    class="final-screen"
+>
+
+    <div class="final-content">
+
+        <img
+            src="images/is.svg"
+            class="final-names"
+            alt=""
+        >
+
+        <img
+            src="images/leaves-divider.png"
+            class="final-divider"
+            alt=""
+        >
+
+        <h1>
+            وأخيرًا…
+        </h1>
+
+        <p>
+            جاء يومنا 🤍
+        </p>
+
+        <span>
+            09 · 09 · 2026
+        </span>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
