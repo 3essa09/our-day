@@ -1,5 +1,7 @@
 const weddingDate =
-    new Date("2026-09-09T18:30:00+03:00").getTime();
+    new Date(
+        "2026-09-09T18:30:00+03:00"
+    ).getTime();
 
 
 const daysElement =
@@ -15,35 +17,55 @@ const secondsElement =
     document.getElementById("seconds");
 
 const messageElement =
-    document.getElementById("countdown-message");
+    document.getElementById(
+        "countdown-message"
+    );
 
 const lastSecondsScreen =
-    document.getElementById("last-seconds-screen");
+    document.getElementById(
+        "last-seconds-screen"
+    );
 
 const lastNumber =
-    document.getElementById("last-number");
+    document.getElementById(
+        "last-number"
+    );
 
 const finalScreen =
-    document.getElementById("final-screen");
+    document.getElementById(
+        "final-screen"
+    );
 
 
 let currentMessage = "";
 
 
 function formatNumber(number) {
-    return String(number).padStart(2, "0");
+
+    return String(number)
+        .padStart(
+            2,
+            "0"
+        );
 }
 
 
 function changeMessage(newMessage) {
 
-    if (newMessage === currentMessage) {
+    if (
+        newMessage === currentMessage
+    ) {
         return;
     }
 
-    currentMessage = newMessage;
 
-    messageElement.style.opacity = "0";
+    currentMessage =
+        newMessage;
+
+
+    messageElement.style.opacity =
+        "0";
+
 
     setTimeout(() => {
 
@@ -62,59 +84,91 @@ function updateCountdown() {
     const now =
         Date.now();
 
+
     const distance =
         weddingDate - now;
 
 
     if (distance <= 0) {
 
-        daysElement.textContent = "00";
-        hoursElement.textContent = "00";
-        minutesElement.textContent = "00";
-        secondsElement.textContent = "00";
+        daysElement.textContent =
+            "00";
+
+        hoursElement.textContent =
+            "00";
+
+        minutesElement.textContent =
+            "00";
+
+        secondsElement.textContent =
+            "00";
+
 
         lastSecondsScreen
             .classList
             .remove("active");
 
+
         finalScreen
             .classList
             .add("active");
+
 
         return;
     }
 
 
     const dayMS =
-        1000 * 60 * 60 * 24;
+        1000 *
+        60 *
+        60 *
+        24;
+
 
     const hourMS =
-        1000 * 60 * 60;
+        1000 *
+        60 *
+        60;
+
 
     const minuteMS =
-        1000 * 60;
+        1000 *
+        60;
 
 
     const days =
         Math.floor(
-            distance / dayMS
+            distance /
+            dayMS
         );
+
 
     const hours =
         Math.floor(
-            (distance % dayMS) /
+            (
+                distance %
+                dayMS
+            ) /
             hourMS
         );
 
+
     const minutes =
         Math.floor(
-            (distance % hourMS) /
+            (
+                distance %
+                hourMS
+            ) /
             minuteMS
         );
 
+
     const seconds =
         Math.floor(
-            (distance % minuteMS) /
+            (
+                distance %
+                minuteMS
+            ) /
             1000
         );
 
@@ -190,7 +244,8 @@ function updateCountdown() {
 
     const totalSeconds =
         Math.ceil(
-            distance / 1000
+            distance /
+            1000
         );
 
 
@@ -202,6 +257,7 @@ function updateCountdown() {
         lastSecondsScreen
             .classList
             .add("active");
+
 
         lastNumber.textContent =
             totalSeconds;
@@ -218,6 +274,7 @@ function updateCountdown() {
 
 
 updateCountdown();
+
 
 setInterval(
     updateCountdown,
