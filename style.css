@@ -1,3 +1,7 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,64 +15,95 @@ body {
     overflow: hidden;
 }
 
-body {
-    background: #efe7dc;
-    font-family: Arial, sans-serif;
-    color: #493a31;
+html {
+    background: #efe6da;
 }
+
+body {
+    background: #efe6da;
+    font-family: Arial, sans-serif;
+    color: #48382e;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
 
 .page {
     position: relative;
+
     width: 100vw;
+
+    height: 100vh;
     height: 100svh;
+
     overflow: hidden;
-    background: #efe7dc;
+
+    background: #efe6da;
+
+    isolation: isolate;
 }
 
 
-/* BACKGROUND */
+/* =========================================
+   BACKGROUND
+========================================= */
 
 .background {
     position: absolute;
+
     inset: 0;
+
     z-index: 0;
 
     background:
         url("images/background.jpg")
-        center / cover
+        center center / cover
         no-repeat;
 }
 
 
-/* ARCH */
+/* =========================================
+   ARCH
+========================================= */
 
 .arch {
     position: absolute;
+
     z-index: 1;
 
     top: 2.5%;
+
     left: 50%;
 
     transform: translateX(-50%);
 
-    width: 106%;
-    height: 87%;
+    width: 108%;
+
+    height: 88%;
 
     object-fit: contain;
+
     object-position: center top;
 
     pointer-events: none;
 }
 
 
-/* SIDE FLOWERS */
+/* =========================================
+   SIDE FLOWERS
+========================================= */
 
 .side-flower {
     position: absolute;
-    z-index: 2;
 
-    top: 14%;
-    height: 56%;
+    z-index: 3;
+
+    top: 13%;
+
+    height: 58%;
+
     width: auto;
 
     object-fit: contain;
@@ -76,22 +111,27 @@ body {
     pointer-events: none;
 }
 
-.flowers-left {
-    left: -17%;
-}
 
-.flowers-right {
-    right: -17%;
+.flower-left {
+    left: -18%;
 }
 
 
-/* TOP SECTION */
+.flower-right {
+    right: -18%;
+}
 
-.top-section {
+
+/* =========================================
+   NAMES
+========================================= */
+
+.names-area {
     position: absolute;
+
     z-index: 20;
 
-    top: 10.5%;
+    top: 10%;
 
     left: 50%;
 
@@ -100,48 +140,179 @@ body {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
-    text-align: center;
+    justify-content: center;
 }
 
 
-/* NAMES */
-
-.names-logo {
+.names {
     display: block;
 
     width: 190px;
-    height: 105px;
+
+    height: 108px;
 
     object-fit: contain;
+
     object-position: center;
 
     margin: 0 auto;
 }
 
 
-/* DIVIDER */
-
 .divider {
     display: block;
 
-    width: 130px;
+    width: 145px;
+
     height: auto;
 
-    margin-top: 7px;
+    margin-top: 3px;
 }
 
 
-/* MESSAGE */
+/* =========================================
+   COUNTER
+========================================= */
+
+.counter-area {
+    position: absolute;
+
+    z-index: 21;
+
+    top: 28.5%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 88%;
+
+    max-width: 355px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.countdown {
+    direction: ltr;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+.count-box {
+    flex: 1;
+
+    max-width: 72px;
+
+    height: 76px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    border:
+        1px solid
+        rgba(
+            126,
+            98,
+            75,
+            0.28
+        );
+
+    border-radius: 15px;
+
+    box-shadow:
+        0
+        6px
+        18px
+        rgba(
+            65,
+            46,
+            33,
+            0.08
+        );
+
+    backdrop-filter: blur(7px);
+
+    -webkit-backdrop-filter: blur(7px);
+}
+
+
+.count-box span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #433229;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+
+.count-box small {
+    direction: rtl;
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #625044;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
 
 .message {
-    margin-top: 9px;
+    margin-top: 14px;
 
     color: #49382f;
 
-    font-size: 13px;
+    font-size: 14px;
+
     font-weight: 600;
 
     line-height: 1.4;
@@ -150,108 +321,35 @@ body {
 
     text-align: center;
 
-    transition: opacity .25s ease;
+    transition:
+        opacity
+        0.25s
+        ease;
 }
 
 
-/* COUNTDOWN */
-
-.countdown-section {
-    position: absolute;
-    z-index: 15;
-
-    top: 30%;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 86%;
-}
-
-.countdown {
-    direction: ltr;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 7px;
-}
-
-.count-box {
-    flex: 1;
-
-    max-width: 68px;
-    height: 70px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(255,255,255,.70);
-
-    border:
-        1px solid
-        rgba(122,95,75,.28);
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 5px 15px
-        rgba(67,49,38,.07);
-
-    backdrop-filter: blur(5px);
-
-    -webkit-backdrop-filter: blur(5px);
-}
-
-.count-box span {
-    font-family: Georgia, serif;
-
-    font-size: 26px;
-    line-height: 1;
-
-    font-weight: 500;
-
-    color: #43342c;
-
-    font-variant-numeric: tabular-nums;
-}
-
-.count-box small {
-    direction: rtl;
-
-    margin-top: 7px;
-
-    color: #665347;
-
-    font-size: 9px;
-    font-weight: 600;
-}
-
-
-/* COUPLE */
+/* =========================================
+   COUPLE
+========================================= */
 
 .couple {
     position: absolute;
-    z-index: 6;
 
-    top: 42%;
+    z-index: 10;
+
+    top: 40%;
 
     left: 53%;
 
     transform: translateX(-50%);
 
     width: 100%;
-    height: 43%;
+
+    height: 48%;
 
     pointer-events: none;
 }
+
 
 .groom,
 .bride {
@@ -262,38 +360,44 @@ body {
     width: auto;
 
     object-fit: contain;
+
     object-position: bottom;
 
     opacity: 1;
 
     animation: none !important;
+
+    transition: none !important;
+
     transform: none !important;
 }
 
 
-/* GROOM */
+/* العريس */
 
 .groom {
     z-index: 1;
 
-    left: 21%;
+    left: 19%;
 
-    height: 100%;
+    height: 99%;
 }
 
 
-/* BRIDE */
+/* العروس */
 
 .bride {
     z-index: 2;
 
-    right: 4%;
+    right: 1%;
 
-    height: 103%;
+    height: 101%;
 }
 
 
-/* DATE CARD */
+/* =========================================
+   DATE CARD
+========================================= */
 
 .date-card {
     position: absolute;
@@ -302,68 +406,102 @@ body {
 
     left: 50%;
 
-    bottom: 7%;
+    bottom: 5.5%;
 
     transform: translateX(-50%);
 
     width: 72%;
-    max-width: 300px;
 
-    height: 108px;
+    max-width: 305px;
 
-    padding: 10px 16px;
+    height: 116px;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
+
+    padding:
+        11px
+        18px;
 
     text-align: center;
 
-    background: rgba(255,255,255,.78);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
 
     border:
         1px solid
-        rgba(122,95,75,.28);
+        rgba(
+            126,
+            98,
+            75,
+            0.27
+        );
 
-    border-radius: 20px;
+    border-radius: 21px;
 
     box-shadow:
-        0 8px 22px
-        rgba(68,49,37,.09);
+        0
+        10px
+        28px
+        rgba(
+            64,
+            45,
+            32,
+            0.10
+        );
 
-    backdrop-filter: blur(9px);
+    backdrop-filter: blur(10px);
 
-    -webkit-backdrop-filter: blur(9px);
+    -webkit-backdrop-filter:
+        blur(10px);
 }
 
-.day-name {
-    color: #4b3b32;
 
-    font-size: 11px;
+/* اليوم */
+
+.date-title {
+    color: #46372e;
+
+    font-size: 12px;
+
     font-weight: 700;
 }
 
-.full-date {
+
+/* التاريخ */
+
+.date-number {
     direction: ltr;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
-    color: #45352d;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-family: Georgia, serif;
+    color: #433229;
 
-    font-size: 19px;
+    font-size: 20px;
 
     letter-spacing: 2px;
 }
 
-.date-line {
-    width: 65%;
 
-    margin: 5px 0;
+/* الخط والقلب */
+
+.date-divider {
+    width: 68%;
 
     display: flex;
 
@@ -371,67 +509,92 @@ body {
 
     justify-content: center;
 
-    gap: 7px;
+    gap: 8px;
+
+    margin:
+        6px
+        auto;
 }
 
-.date-line span {
+
+.date-divider span {
+    display: block;
+
     flex: 1;
 
     height: 1px;
 
     background:
-        rgba(129,101,80,.35);
+        rgba(
+            131,
+            104,
+            83,
+            0.34
+        );
 }
 
-.date-line b {
-    color: #a58a72;
 
-    font-size: 11px;
+.date-divider b {
+    color: #a28770;
 
-    font-weight: normal;
+    font-size: 12px;
+
+    font-weight: 400;
 }
 
-.time {
+
+/* الساعة */
+
+.event-time {
     direction: ltr;
 
-    color: #4f4036;
+    color: #47372e;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 }
 
 
-/* BOTTOM FLOWERS */
+/* =========================================
+   BOTTOM FLOWERS
+========================================= */
 
 .bottom-flower {
     position: absolute;
 
-    z-index: 8;
+    z-index: 25;
 
-    bottom: -2%;
+    bottom: -3%;
 
-    width: 40%;
+    width: 43%;
 
-    max-width: 210px;
+    max-width: 225px;
 
     height: auto;
 
     pointer-events: none;
 }
 
+
 .bottom-left {
-    left: -8%;
+    left: -9%;
 }
+
 
 .bottom-right {
-    right: -8%;
+    right: -9%;
 }
 
 
-/* LAST 10 SECONDS */
+/* =========================================
+   LAST 10 SECONDS
+========================================= */
 
 .last-seconds-screen {
     position: fixed;
@@ -445,45 +608,63 @@ body {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     background:
-        rgba(239,231,220,.98);
+        rgba(
+            239,
+            230,
+            218,
+            0.98
+        );
 
     opacity: 0;
 
     visibility: hidden;
 
     transition:
-        opacity .5s ease,
-        visibility .5s ease;
+        opacity
+        0.5s
+        ease,
+        visibility
+        0.5s
+        ease;
 }
+
 
 .last-seconds-screen.active {
     opacity: 1;
+
     visibility: visible;
 }
 
-.last-seconds-screen p {
-    margin-bottom: 15px;
 
-    color: #4f4036;
+.last-seconds-screen p {
+    margin-bottom: 18px;
+
+    color: #4b3a30;
 
     font-size: 17px;
 }
 
+
 #last-number {
     direction: ltr;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
-    color: #45352d;
+    color: #433229;
 
-    font-size: 110px;
+    font-size: 115px;
 }
 
 
-/* FINAL SCREEN */
+/* =========================================
+   FINAL SCREEN
+========================================= */
 
 .final-screen {
     position: fixed;
@@ -494,14 +675,15 @@ body {
 
     display: flex;
 
-    justify-content: center;
     align-items: center;
+
+    justify-content: center;
 
     background:
         radial-gradient(
-            circle,
-            #faf4eb,
-            #ede3d7
+            circle at center,
+            #faf4eb 0%,
+            #ede2d5 100%
         );
 
     opacity: 0;
@@ -509,65 +691,88 @@ body {
     visibility: hidden;
 
     transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        opacity
+        1.2s
+        ease,
+        visibility
+        1.2s
+        ease;
 }
+
 
 .final-screen.active {
     opacity: 1;
+
     visibility: visible;
 }
 
+
 .final-content {
+    width: 100%;
+
     text-align: center;
 }
+
 
 .final-names {
     display: block;
 
-    width: 200px;
+    width: 210px;
+
     height: auto;
 
     margin: 0 auto;
 }
 
+
 .final-divider {
     display: block;
 
-    width: 140px;
+    width: 145px;
+
     height: auto;
 
-    margin: 10px auto 22px;
+    margin:
+        10px
+        auto
+        24px;
 }
 
+
 .final-content h1 {
-    color: #45352d;
+    font-family:
+        Georgia,
+        serif;
 
-    font-family: Georgia, serif;
+    color: #433229;
 
-    font-size: 32px;
+    font-size: 34px;
 
     font-weight: 400;
 }
 
+
 .final-content p {
-    margin-top: 8px;
+    margin-top: 10px;
 
-    color: #59483c;
+    color: #59463a;
 
-    font-size: 16px;
+    font-size: 17px;
 }
+
 
 .final-content > span {
     direction: ltr;
 
     display: block;
 
-    margin-top: 14px;
+    margin-top: 16px;
 
-    color: #725f50;
+    color: #725d4e;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     letter-spacing: 2px;
 }
