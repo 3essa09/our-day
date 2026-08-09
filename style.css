@@ -12,12 +12,21 @@ body {
 
 body {
     overflow: hidden;
+
     background: #efe7dc;
-    font-family: Arial, sans-serif;
+
+    font-family:
+        Arial,
+        sans-serif;
+
     color: #4d3d33;
 }
 
-/* شاشة العرض */
+
+/* =========================
+   SCREEN
+========================= */
+
 .screen {
     width: 100vw;
     height: 100svh;
@@ -31,61 +40,102 @@ body {
     background: #efe7dc;
 }
 
-/* اللوحة الثابتة */
+
+/* =========================
+   FIXED STAGE
+========================= */
+
 .stage {
     position: relative;
 
     width: 390px;
     height: 844px;
 
-    flex: 0 0 390px;
-
     overflow: hidden;
+
+    flex-shrink: 0;
 
     background: #efe7dc;
 
     transform-origin: top center;
-
-    scale: min(
-        calc(100vw / 390),
-        calc(100svh / 844)
-    );
 }
 
-/* الخلفية */
+
+/* =========================
+   RESPONSIVE SCALE
+========================= */
+
+@media (max-width: 390px) {
+
+    .stage {
+        transform:
+            scale(
+                calc(100vw / 390)
+            );
+    }
+
+}
+
+
+@media (min-width: 391px) {
+
+    .stage {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
 .background {
     position: absolute;
+
     inset: 0;
+
+    z-index: 0;
 
     background:
         url("images/background.jpg")
-        center center / cover
+        center center /
+        cover
         no-repeat;
-
-    z-index: 0;
 }
 
-/* القوس */
+
+/* =========================
+   ARCH
+========================= */
+
 .arch {
     position: absolute;
 
     z-index: 1;
 
-    top: 20px;
+    top: 18px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 420px;
     height: 760px;
 
     object-fit: contain;
-    object-position: center top;
+
+    object-position:
+        center top;
 
     pointer-events: none;
 }
 
-/* الورد الجانبي */
+
+/* =========================
+   SIDE FLOWERS
+========================= */
+
 .side-flower {
     position: absolute;
 
@@ -101,24 +151,31 @@ body {
     pointer-events: none;
 }
 
+
 .flowers-left {
     left: -75px;
 }
+
 
 .flowers-right {
     right: -75px;
 }
 
-/* الأسماء */
+
+/* =========================
+   NAMES
+========================= */
+
 .names-area {
     position: absolute;
 
     z-index: 20;
 
-    top: 90px;
+    top: 92px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 280px;
 
@@ -127,6 +184,7 @@ body {
     align-items: center;
 }
 
+
 .names-logo {
     width: 195px;
     height: 110px;
@@ -134,23 +192,30 @@ body {
     object-fit: contain;
 }
 
+
 .divider {
     width: 145px;
+
     height: auto;
 
     margin-top: 4px;
 }
 
-/* العداد */
+
+/* =========================
+   COUNTDOWN AREA
+========================= */
+
 .countdown-area {
     position: absolute;
 
     z-index: 20;
 
-    top: 248px;
+    top: 250px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 330px;
 
@@ -159,17 +224,24 @@ body {
     align-items: center;
 }
 
+
+/* =========================
+   COUNTDOWN
+========================= */
+
 .countdown {
     direction: ltr;
 
     width: 100%;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     gap: 8px;
 }
+
 
 .count-box {
     width: 72px;
@@ -177,32 +249,63 @@ body {
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
-    background: rgba(255,255,255,.72);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
 
-    border: 1px solid rgba(122,95,75,.28);
+    border:
+        1px solid
+        rgba(
+            122,
+            95,
+            75,
+            .28
+        );
 
     border-radius: 15px;
 
     box-shadow:
-        0 6px 18px rgba(65,46,33,.08);
+        0
+        6px
+        18px
+        rgba(
+            65,
+            46,
+            33,
+            .08
+        );
 
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
 }
 
+
 .count-box span {
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     color: #433229;
 
     font-size: 28px;
+
     line-height: 1;
 
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric:
+        tabular-nums;
 }
+
 
 .count-box small {
     direction: rtl;
@@ -212,8 +315,14 @@ body {
     color: #625044;
 
     font-size: 10px;
+
     font-weight: 600;
 }
+
+
+/* =========================
+   MESSAGE
+========================= */
 
 .message {
     margin-top: 12px;
@@ -221,60 +330,67 @@ body {
     color: #49382f;
 
     font-size: 14px;
+
     font-weight: 600;
 
     white-space: nowrap;
 
     text-align: center;
 
-    transition: opacity .2s ease;
+    transition:
+        opacity
+        .2s
+        ease;
 }
 
-/* العرسان */
-.couple {
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple-area {
     position: absolute;
 
     z-index: 10;
 
-    top: 345px;
+    top: 360px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 390px;
     height: 390px;
 
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
     pointer-events: none;
 }
 
-.groom,
-.bride {
-    position: absolute;
 
-    bottom: 0;
+.couple-image {
+    display: block;
+
+    height: 385px;
 
     width: auto;
 
+    max-width: 360px;
+
     object-fit: contain;
-    object-position: bottom;
 
-    opacity: 1;
-
-    animation: none !important;
-    transform: none !important;
+    object-position:
+        center bottom;
 }
 
-.groom {
-    left: 78px;
-    height: 355px;
-}
 
-.bride {
-    right: 28px;
-    height: 365px;
-}
+/* =========================
+   DATE CARD
+========================= */
 
-/* بوكس التاريخ */
 .date-card {
     position: absolute;
 
@@ -283,44 +399,79 @@ body {
     left: 50%;
     bottom: 54px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 270px;
     height: 116px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 10px 16px;
+    padding:
+        10px
+        16px;
 
-    background: rgba(255,255,255,.82);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .82
+        );
 
-    border: 1px solid rgba(126,98,75,.27);
+    border:
+        1px solid
+        rgba(
+            126,
+            98,
+            75,
+            .27
+        );
 
     border-radius: 20px;
 
     box-shadow:
-        0 10px 26px rgba(64,45,32,.10);
+        0
+        10px
+        26px
+        rgba(
+            64,
+            45,
+            32,
+            .10
+        );
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
 }
+
 
 .day-name {
     color: #46372e;
 
     font-size: 12px;
+
     font-weight: 700;
 }
+
 
 .full-date {
     direction: ltr;
 
     margin-top: 6px;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     color: #433229;
 
@@ -329,44 +480,65 @@ body {
     letter-spacing: 2px;
 }
 
+
 .date-divider {
     width: 68%;
 
     display: flex;
+
     align-items: center;
 
     gap: 8px;
 
-    margin: 6px auto;
+    margin:
+        6px
+        auto;
 }
+
 
 .date-divider span {
     flex: 1;
 
     height: 1px;
 
-    background: rgba(131,104,83,.34);
+    background:
+        rgba(
+            131,
+            104,
+            83,
+            .34
+        );
 }
+
 
 .date-divider b {
     color: #a28770;
 
     font-size: 12px;
+
     font-weight: 400;
 }
+
 
 .time {
     direction: ltr;
 
     color: #47372e;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     font-size: 14px;
+
     font-weight: 600;
 }
 
-/* الورد السفلي */
+
+/* =========================
+   BOTTOM FLOWERS
+========================= */
+
 .bottom-flower {
     position: absolute;
 
@@ -375,45 +547,70 @@ body {
     bottom: -14px;
 
     width: 170px;
+
     height: auto;
 
     pointer-events: none;
 }
 
+
 .bottom-left {
     left: -32px;
 }
+
 
 .bottom-right {
     right: -32px;
 }
 
-/* آخر 10 ثواني */
+
+/* =========================
+   LAST 10 SECONDS
+========================= */
+
 .last-seconds-screen {
     position: fixed;
+
     inset: 0;
 
     z-index: 100;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
-    background: rgba(239,230,218,.98);
+    background:
+        rgba(
+            239,
+            230,
+            218,
+            .98
+        );
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
-        opacity .5s ease,
-        visibility .5s ease;
+        opacity
+        .5s
+        ease,
+        visibility
+        .5s
+        ease;
 }
+
 
 .last-seconds-screen.active {
     opacity: 1;
+
     visibility: visible;
 }
+
 
 .last-seconds-screen p {
     margin-bottom: 18px;
@@ -423,25 +620,35 @@ body {
     font-size: 17px;
 }
 
+
 #last-number {
     direction: ltr;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     color: #433229;
 
     font-size: 115px;
 }
 
-/* الشاشة النهائية */
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
 .final-screen {
     position: fixed;
+
     inset: 0;
 
     z-index: 200;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -452,37 +659,54 @@ body {
         );
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        opacity
+        1.2s
+        ease,
+        visibility
+        1.2s
+        ease;
 }
+
 
 .final-screen.active {
     opacity: 1;
+
     visibility: visible;
 }
+
 
 .final-content {
     text-align: center;
 }
 
+
 .final-names {
     width: 210px;
+
     height: auto;
 }
+
 
 .final-divider {
     display: block;
 
     width: 145px;
 
-    margin: 10px auto 24px;
+    margin:
+        10px
+        auto
+        24px;
 }
 
+
 .final-content h1 {
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     color: #433229;
 
@@ -491,6 +715,7 @@ body {
     font-weight: 400;
 }
 
+
 .final-content p {
     margin-top: 10px;
 
@@ -498,6 +723,7 @@ body {
 
     font-size: 17px;
 }
+
 
 .final-content > span {
     direction: ltr;
@@ -508,7 +734,9 @@ body {
 
     color: #725d4e;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     letter-spacing: 2px;
 }
