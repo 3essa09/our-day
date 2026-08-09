@@ -12,17 +12,12 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
-    overflow: hidden;
-
     background: #efe7dc;
-
-    font-family:
-        Arial,
-        sans-serif;
-
+    font-family: Arial, sans-serif;
     color: #493a31;
 }
 
@@ -35,8 +30,6 @@ body {
     position: relative;
 
     width: 100vw;
-
-    height: 100vh;
     height: 100svh;
 
     overflow: hidden;
@@ -51,15 +44,13 @@ body {
 
 .background {
     position: absolute;
-
     inset: 0;
 
     z-index: 0;
 
     background:
         url("images/background.jpg")
-        center center /
-        cover
+        center center / cover
         no-repeat;
 }
 
@@ -73,21 +64,16 @@ body {
 
     z-index: 1;
 
-    top: 1svh;
-
+    top: 2.5%;
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    width: 108vw;
-
-    height: 89svh;
+    width: 106%;
+    height: 86%;
 
     object-fit: contain;
-
-    object-position:
-        center top;
+    object-position: center top;
 
     pointer-events: none;
 }
@@ -102,25 +88,22 @@ body {
 
     z-index: 2;
 
-    top: 12svh;
-
-    height: 56svh;
+    top: 14%;
 
     width: auto;
+    height: 55%;
 
     object-fit: contain;
 
     pointer-events: none;
-
-    opacity: .82;
 }
 
 .flowers-left {
-    left: -18%;
+    left: -17%;
 }
 
 .flowers-right {
-    right: -18%;
+    right: -17%;
 }
 
 
@@ -131,119 +114,119 @@ body {
 .top-section {
     position: absolute;
 
-    z-index: 10;
+    z-index: 20;
 
-    top:
-        max(
-            7svh,
-            calc(
-                env(safe-area-inset-top)
-                + 10px
-            )
-        );
+    top: 8%;
 
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    width: 80%;
+    width: 100%;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
+    justify-content: flex-start;
+
+    overflow: visible;
 
     text-align: center;
 }
 
 
-/* Names */
+/* =========================================
+   NAMES
+========================================= */
 
 .names-logo {
+    position: relative;
+
     display: block;
 
-    width: 205px;
+    width: 190px;
+    height: 105px;
 
-    max-width: 58vw;
-
-    height: auto;
+    max-width: none;
 
     object-fit: contain;
-}
+    object-position: center;
 
-
-/* Divider */
-
-.divider {
-    display: block;
-
-    width: 135px;
-
-    max-width: 38vw;
-
-    height: auto;
-
-    margin-top: 6px;
-}
-
-
-/* Message */
-
-.message {
-    margin-top: 8px;
-
-    color: #49382f;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    line-height: 1.4;
-
-    text-shadow:
-        0
-        1px
-        0
-        rgba(255,255,255,.55);
-
-    transition:
-        opacity
-        .25s
-        ease;
+    margin: 0 auto;
 }
 
 
 /* =========================================
-   COUNTDOWN SECTION
+   DIVIDER
+========================================= */
+
+.divider {
+    display: block;
+
+    width: 125px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 7px auto 0;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    position: relative;
+
+    margin-top: 7px;
+
+    color: #49382f;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+
+    text-align: center;
+
+    transition: opacity .25s ease;
+}
+
+
+/* =========================================
+   COUNTDOWN
 ========================================= */
 
 .countdown-section {
     position: absolute;
 
-    z-index: 12;
+    z-index: 15;
 
-    top: 27svh;
+    top: 28%;
 
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    width: 84%;
+    width: 86%;
 
-    max-width: 350px;
+    display: flex;
+
+    justify-content: center;
 }
 
 
 .countdown {
     direction: ltr;
 
+    width: 100%;
+
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 6px;
@@ -251,72 +234,46 @@ body {
 
 
 .count-box {
-    width: 64px;
+    flex: 1;
 
-    height: 69px;
+    max-width: 68px;
+    height: 70px;
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            .66
-        );
+    background: rgba(255, 255, 255, .68);
 
     border:
-        1px
-        solid
-        rgba(
-            122,
-            95,
-            75,
-            .30
-        );
+        1px solid
+        rgba(122, 95, 75, .28);
 
     border-radius: 14px;
 
     box-shadow:
-        0
-        6px
-        16px
-        rgba(
-            67,
-            49,
-            38,
-            .07
-        );
+        0 5px 15px
+        rgba(67, 49, 38, .07);
 
-    backdrop-filter:
-        blur(6px);
-
-    -webkit-backdrop-filter:
-        blur(6px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 
 .count-box span {
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     font-size: 26px;
-
     line-height: 1;
-
-    color: #43342c;
 
     font-weight: 500;
 
-    font-variant-numeric:
-        tabular-nums;
+    color: #43342c;
+
+    font-variant-numeric: tabular-nums;
 }
 
 
@@ -328,7 +285,6 @@ body {
     color: #665347;
 
     font-size: 9px;
-
     font-weight: 600;
 }
 
@@ -340,18 +296,16 @@ body {
 .couple {
     position: absolute;
 
-    z-index: 5;
+    z-index: 6;
+
+    top: 39%;
 
     left: 50%;
 
-    top: 37svh;
-
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     width: 100%;
-
-    height: 40svh;
+    height: 38%;
 
     pointer-events: none;
 }
@@ -366,31 +320,32 @@ body {
     width: auto;
 
     object-fit: contain;
-
     object-position: bottom;
 
     opacity: 1;
 
-    animation: none;
+    animation: none !important;
 
-    filter:
-        drop-shadow(
-            0
-            5px
-            8px
-            rgba(54,42,32,.06)
-        );
+    transform: none !important;
 }
 
 
+/* Groom */
+
 .groom {
+    z-index: 1;
+
     left: 25%;
 
     height: 93%;
 }
 
 
+/* Bride */
+
 .bride {
+    z-index: 2;
+
     right: 10%;
 
     height: 95%;
@@ -404,73 +359,44 @@ body {
 .date-card {
     position: absolute;
 
-    z-index: 13;
+    z-index: 16;
 
     left: 50%;
 
-    bottom:
-        calc(
-            7.5svh
-            + env(safe-area-inset-bottom)
-        );
+    bottom: 7%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    width: 66%;
-
+    width: 70%;
     max-width: 285px;
 
-    min-height: 102px;
+    height: 105px;
 
-    padding:
-        10px
-        16px;
+    padding: 10px 16px;
 
     display: flex;
 
     flex-direction: column;
 
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    text-align: center;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            .70
-        );
+    background: rgba(255, 255, 255, .72);
 
     border:
-        1px
-        solid
-        rgba(
-            122,
-            95,
-            75,
-            .30
-        );
+        1px solid
+        rgba(122, 95, 75, .28);
 
     border-radius: 18px;
 
     box-shadow:
-        0
-        8px
-        20px
-        rgba(
-            68,
-            49,
-            37,
-            .08
-        );
+        0 7px 18px
+        rgba(68, 49, 37, .08);
 
-    backdrop-filter:
-        blur(8px);
-
-    -webkit-backdrop-filter:
-        blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 
@@ -478,7 +404,6 @@ body {
     color: #4b3b32;
 
     font-size: 11px;
-
     font-weight: 700;
 }
 
@@ -490,9 +415,7 @@ body {
 
     color: #45352d;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     font-size: 18px;
 
@@ -501,17 +424,17 @@ body {
 
 
 .date-line {
-    width: 64%;
+    width: 65%;
 
-    margin:
-        4px
-        0;
+    margin: 5px 0;
 
     display: flex;
 
     align-items: center;
 
-    gap: 6px;
+    justify-content: center;
+
+    gap: 7px;
 }
 
 
@@ -521,12 +444,7 @@ body {
     height: 1px;
 
     background:
-        rgba(
-            129,
-            101,
-            80,
-            .35
-        );
+        rgba(129, 101, 80, .35);
 }
 
 
@@ -544,9 +462,7 @@ body {
 
     color: #4f4036;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     font-size: 13px;
 
@@ -563,11 +479,11 @@ body {
 
     z-index: 8;
 
-    bottom: -3%;
+    bottom: -2%;
 
-    width: 42vw;
+    width: 40%;
 
-    max-width: 220px;
+    max-width: 210px;
 
     height: auto;
 
@@ -600,17 +516,10 @@ body {
 
     flex-direction: column;
 
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
-
-    background:
-        rgba(
-            239,
-            231,
-            220,
-            .97
-        );
+    background: rgba(239, 231, 220, .98);
 
     opacity: 0;
 
@@ -624,7 +533,6 @@ body {
 
 .last-seconds-screen.active {
     opacity: 1;
-
     visibility: visible;
 }
 
@@ -641,13 +549,11 @@ body {
 #last-number {
     direction: ltr;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     color: #45352d;
 
-    font-size: 120px;
+    font-size: 110px;
 }
 
 
@@ -664,9 +570,8 @@ body {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+    align-items: center;
 
     background:
         radial-gradient(
@@ -687,7 +592,6 @@ body {
 
 .final-screen.active {
     opacity: 1;
-
     visibility: visible;
 }
 
@@ -698,45 +602,42 @@ body {
 
 
 .final-names {
-    width: 220px;
+    display: block;
 
-    max-width: 65vw;
-
+    width: 200px;
     height: auto;
+
+    margin: 0 auto;
 }
 
 
 .final-divider {
     display: block;
 
-    width: 150px;
+    width: 140px;
+    height: auto;
 
-    margin:
-        10px
-        auto
-        25px;
+    margin: 10px auto 22px;
 }
 
 
 .final-content h1 {
     color: #45352d;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
-    font-size: 34px;
+    font-size: 32px;
 
     font-weight: 400;
 }
 
 
 .final-content p {
-    margin-top: 9px;
+    margin-top: 8px;
 
     color: #59483c;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 
@@ -745,117 +646,11 @@ body {
 
     display: block;
 
-    margin-top: 15px;
+    margin-top: 14px;
 
     color: #725f50;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     letter-spacing: 2px;
-}
-
-
-/* =========================================
-   SMALL IPHONES
-========================================= */
-
-@media (max-height: 700px) {
-
-    .top-section {
-        top: 5svh;
-    }
-
-    .names-logo {
-        width: 175px;
-    }
-
-    .divider {
-        width: 120px;
-    }
-
-    .message {
-        margin-top: 5px;
-
-        font-size: 12px;
-    }
-
-    .countdown-section {
-        top: 24svh;
-    }
-
-    .count-box {
-        width: 59px;
-
-        height: 62px;
-    }
-
-    .count-box span {
-        font-size: 22px;
-    }
-
-    .couple {
-        top: 35svh;
-
-        height: 39svh;
-    }
-
-    .date-card {
-        bottom:
-            calc(
-                6svh
-                + env(safe-area-inset-bottom)
-            );
-
-        min-height: 92px;
-    }
-
-    .full-date {
-        font-size: 16px;
-    }
-
-}
-
-
-/* =========================================
-   LARGE IPHONES
-========================================= */
-
-@media (min-height: 850px) {
-
-    .top-section {
-        top: 7.5svh;
-    }
-
-    .names-logo {
-        width: 215px;
-    }
-
-    .divider {
-        width: 140px;
-    }
-
-    .countdown-section {
-        top: 27svh;
-    }
-
-    .count-box {
-        width: 65px;
-
-        height: 70px;
-    }
-
-    .couple {
-        top: 37svh;
-
-        height: 41svh;
-    }
-
-    .date-card {
-        width: 68%;
-
-        min-height: 105px;
-    }
-
 }
