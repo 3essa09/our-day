@@ -9,10 +9,7 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <meta
-        name="theme-color"
-        content="#efe7dc"
-    >
+    <meta name="theme-color" content="#efe6da">
 
     <title>Our Day 🤍</title>
 
@@ -23,35 +20,38 @@
 
 <main class="page">
 
-    <!-- Background -->
+    <!-- الخلفية -->
     <div class="background"></div>
 
-    <!-- Arch -->
+
+    <!-- القوس -->
     <img
         src="images/arch.png"
         class="arch"
         alt=""
     >
 
-    <!-- Side Flowers -->
+
+    <!-- الورد الجانبي -->
     <img
         src="images/flowers-left.png"
-        class="side-flower flowers-left"
+        class="side-flower flower-left"
         alt=""
     >
 
     <img
         src="images/flowers-right.png"
-        class="side-flower flowers-right"
+        class="side-flower flower-right"
         alt=""
     >
 
-    <!-- Top Section -->
-    <section class="top-section">
+
+    <!-- الأسماء -->
+    <div class="names-area">
 
         <img
             src="images/is.svg"
-            class="names-logo"
+            class="names"
             alt="عيسى وسارة"
         >
 
@@ -61,17 +61,11 @@
             alt=""
         >
 
-        <p
-            id="countdown-message"
-            class="message"
-        >
-            يومنا صار أقرب 🤍
-        </p>
+    </div>
 
-    </section>
 
-    <!-- Countdown -->
-    <section class="countdown-section">
+    <!-- العداد -->
+    <div class="counter-area">
 
         <div class="countdown">
 
@@ -97,9 +91,18 @@
 
         </div>
 
-    </section>
 
-    <!-- Couple -->
+        <p
+            id="countdown-message"
+            class="message"
+        >
+            يومنا صار أقرب 🤍
+        </p>
+
+    </div>
+
+
+    <!-- العرسان -->
     <div class="couple">
 
         <img
@@ -116,36 +119,32 @@
 
     </div>
 
-    <!-- Date Card -->
-    <section class="date-card">
 
-        <span class="day-name">
+    <!-- التاريخ -->
+    <div class="date-card">
+
+        <div class="date-title">
             الأربعاء
-        </span>
-
-        <span class="full-date">
-            09 · 09 · 2026
-        </span>
-
-        <div class="date-line">
-
-            <span></span>
-
-            <b>
-                ♡
-            </b>
-
-            <span></span>
-
         </div>
 
-        <span class="time">
-            ◷ 6:30 PM
-        </span>
+        <div class="date-number">
+            09 · 09 · 2026
+        </div>
 
-    </section>
+        <div class="date-divider">
+            <span></span>
+            <b>♡</b>
+            <span></span>
+        </div>
 
-    <!-- Bottom Flowers -->
+        <div class="event-time">
+            ◷&nbsp;&nbsp;6:30 PM
+        </div>
+
+    </div>
+
+
+    <!-- الورد السفلي -->
     <img
         src="images/flowers-bottom-left.png"
         class="bottom-flower bottom-left"
@@ -158,23 +157,21 @@
         alt=""
     >
 
-    <!-- Last 10 Seconds -->
+
+    <!-- آخر 10 ثواني -->
     <div
         id="last-seconds-screen"
         class="last-seconds-screen"
     >
-
-        <p>
-            باقي على يومنا
-        </p>
+        <p>باقي على يومنا</p>
 
         <span id="last-number">
             10
         </span>
-
     </div>
 
-    <!-- Final Screen -->
+
+    <!-- بعد وصول التاريخ -->
     <div
         id="final-screen"
         class="final-screen"
